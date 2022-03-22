@@ -5,20 +5,16 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+- cd ruby_on_rails_assignment
 
-* System dependencies
+- bundle install
 
-* Configuration
+- yarn install
 
-* Database creation
+- rails db:create
 
-* Database initialization
+- rails db:migrate
 
-* How to run the test suite
+- rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- rails s
