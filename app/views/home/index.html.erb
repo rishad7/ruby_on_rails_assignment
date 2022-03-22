@@ -1,0 +1,89 @@
+<header class="fixed-top">
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Ruby on Rails Assignment</strong>
+      </a>
+    </div>
+  </div>
+</header>
+<div style="margin-top: 56px;" class="container">
+    <div class="col-sm-12 pt-5">
+        <h1 class="mb-3">Tv Series</h1>
+        <form action="/index" method="GET" class="mb-3">
+        
+        <% if params[:search].blank? %>
+
+            <div class="d-flex justify-content-between">
+                <input type="text" class="form-control" name="search" placeholder="Type an actor name to search their TV Series" id="actorName">
+                <button type="submit" class="btn btn-primary ms-1">Search</button>        
+            </div>
+
+        <% else %>
+
+            <div class="d-flex justify-content-between">
+
+                <h3><%= @tv_series_list.count %> search results</h3>
+                
+                    <a href="/">
+                        <button type="button" class="btn btn-danger ms-1">Clear</button>
+                    </a>
+            </div>
+
+        <% end %>
+
+            
+        </form>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Genre</th>
+                <th scope="col">No of seosons</th>
+                <th scope="col">Date of First Release</th>
+                <th scope="col">Director</th>
+                <th scope="col">Actor</th>
+                <th scope="col">Shoot location</th>
+                <th scope="col">Country</th>
+            </tr>
+            </thead>
+            <tbody>
+               <% @tv_series_list.each_with_index do |tsl, index| %>
+                    <tr>
+                        <th scope="row"><%= index + 1 %></th>
+                        <td><%= tsl.tv.name %></td>
+                        <td><%= tsl.genre %></td>
+                        <td><%= tsl.no_of_seosons %></td>
+                        <td><%= tsl.date_of_first_release %></td>
+                        <td><%= tsl.director %></td>
+                        <td><%= tsl.actor %></td>
+                        <td><%= tsl.shoot_location %></td>
+                        <td><%= tsl.country %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-12 mt-5">
+        <h1>Average Rating</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tv Series</th>
+                <th scope="col">Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+               <% @tv_series.each_with_index do |ts, index| %>
+                    <tr>
+                        <th scope="row"><%= index + 1 %></th>
+                        <td><%= ts.name %></td>
+                        <td><%= Float(ts.reviews.sum(:stars)) / Float(ts.reviews.count) %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div> 
+</div>
