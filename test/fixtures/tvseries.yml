@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  genre: MyString
-  no_of_seosons: 1
-  date_of_first_release: MyString
-  director: MyString
-  actor: MyString
-  shoot_location: MyString
-  country: MyString
+  genre: "Legal Drama"
+  no_of_seosons: 9
+  date_of_first_release: "23rd June 2011"
+  director: "Kevin Bray"
+  actor: "Meghan"
+  shoot_location: "New York"
+  country: "US"
   tv: one
 
 two:
-  genre: MyString
-  no_of_seosons: 1
-  date_of_first_release: MyString
-  director: MyString
-  actor: MyString
-  shoot_location: MyString
-  country: MyString
+  genre: "Office humor"
+  no_of_seosons: 8
+  date_of_first_release: "24th March 2005"
+  director: "Greg Daniels"
+  actor: "Jenna Fischer"
+  shoot_location: "BedfordShire"
+  country: "UK"
   tv: two
